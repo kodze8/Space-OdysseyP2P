@@ -1,9 +1,8 @@
-# Space Oddisey
+# Space Odyssey
 
 A multiplayer spaceship movement game built with Pygame, featuring player score tracking and real-time ping display for connected peers.
 
 ## Features
-
 - Control your spaceship using arrow keys.
 - Real-time display of your score and other players’ scores.
 - Shows network latency (ping) for each connected player.
@@ -11,7 +10,6 @@ A multiplayer spaceship movement game built with Pygame, featuring player score 
 - Final score summary displayed at the end of the game.
 
 ## Installation
-
 1. Make sure you have Python 3.x installed.
 2. Install Pygame:
 
@@ -33,18 +31,16 @@ Control your spaceship with the arrow keys:
 - Down: Move down
 The game will run for 60 seconds by default, then display the final scores.
 
-### Game Objective
+## Game Objective
 - You play as a triangle-shaped spaceship. 
 - The goal is to collect as many randomly generated circles as possible within 60 seconds. 
 - Other players are shown as beige-colored circles, and everyone can see each other/and each other's scores in real time. 
 - The game ends after one minute, and the final scores are displayed for all peers.
 
----
 ## Gameplay Demo
-
 Watch the gameplay here:  
 [https://youtu.be/K16kKveTV4U?si=9RB9DCtUGPrVSBkc](https://youtu.be/K16kKveTV4U?si=9RB9DCtUGPrVSBkc)
----
+
 ## Peer-to-Peer Networking Architecture
 This game is fully peer-to-peer (P2P)—there is no server involved at any stage.
 1. Peer Discovery & Connection
@@ -67,7 +63,7 @@ This game is fully peer-to-peer (P2P)—there is no server involved at any stage
 - The game handles disconnects gracefully.
 - Peers Scan local network (e.g., 192.168.x.x) to detect available players.
 
-### Algorithmic Considerations
+## Algorithmic Considerations
 - Dead reckoning: was evaluated but not implemented, as player movement in this game is short-term and manually controlled (not continuous in one direction at constant speed). Predicting future positions without updates did not improve the smoothness or reduce load meaningfully, so we kept real-time updates without extrapolation.
 - Ping Arbitration: A win condition is implemented:
 The spaceship that collects the most circles within 60 seconds is declared the winner.
